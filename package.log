@@ -13,4 +13,4 @@
   • downloaded electron zip extracted successfully  output=D:\a\koishi-desktop-pet\koishi-desktop-pet\dist\eb\win-unpacked
   • searching for node modules  pm=npm searchDir=D:\a\koishi-desktop-pet\koishi-desktop-pet
   • updating asar integrity executable resource  executablePath=dist\eb\win-unpacked\古明地恋桌宠.exe
-  • signing with signtool.exe  path=dist\eb\win-unpacked\古明地恋桌宠.exe
+  • executable resource editing and code signing skipped — signAndEditExecutable is false. To skip only code signing while keeping icon and metadata applied, use signExecutable: false instead.  exe=dist\eb\win-unpacked\古明地恋桌宠.exe
