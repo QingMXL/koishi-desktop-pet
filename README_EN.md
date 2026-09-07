@@ -73,15 +73,9 @@ Rebuild: `npm run build && npm run build:mac`
 ### 🪟 Windows
 **Option 1 (recommended)**: every push to `main` triggers a GitHub Actions build. Open the **Actions** tab, enter the latest `Build Windows` run, download the `koishi-desktop-pet-win32-x64` artifact, unzip and run `古明地恋桌宠.exe` (unsigned — click "More info → Run anyway" on first launch).
 
-**Option 2 (build on Windows)**:
-```bash
-npm install
-npm run build
-npm run build:win
-```
-Output is in `dist/古明地恋桌宠-win32-x64/`.
+**Option 2 (build locally, works on macOS & Windows)**: `npm run build:win:cross` (electron-builder, no wine needed) → `dist/eb/win-unpacked/`.
 
-**Option 3 (cross-build on macOS)**: `npm run build:win:cross` (electron-builder, no wine needed) → `dist/eb/win-unpacked/`.
+**Option 3 (electron-packager on Windows)**: `npm run build:win` → `dist/古明地恋桌宠-win32-x64/`.
 
 ### Rebuild (legacy command, still works)
 ```bash

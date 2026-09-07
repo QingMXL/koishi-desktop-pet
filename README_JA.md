@@ -73,15 +73,9 @@ npm start
 ### 🪟 Windows
 **方法1(推奨)**: `main` ブランチへの push のたびに GitHub Actions が自動で Windows x64 版をビルドします。リポジトリの **Actions** タブで最新の `Build Windows` を開き、下部 Artifacts から `koishi-desktop-pet-win32-x64` をダウンロードして解凍し、`古明地恋桌宠.exe` を実行してください(未署名 — 初回は「詳細情報 → 実行」)。
 
-**方法2(Windows でビルド)**:
-```bash
-npm install
-npm run build
-npm run build:win
-```
-成果物は `dist/古明地恋桌宠-win32-x64/` にあります。
+**方法2(ローカルビルド、macOS/Windows 共通)**: `npm run build:win:cross`(electron-builder、wine 不要) → `dist/eb/win-unpacked/`.
 
-**方法3(macOS でのクロスビルド)**: `npm run build:win:cross`(electron-builder、wine 不要) → `dist/eb/win-unpacked/`。
+**方法3(Windows で electron-packager)**: `npm run build:win` → `dist/古明地恋桌宠-win32-x64/`.
 
 ### 再ビルド (旧コマンド、引き続き利用可)
 ```bash

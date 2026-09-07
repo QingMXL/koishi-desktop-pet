@@ -22,12 +22,12 @@ jobs:
       - name: Bundle renderer
         run: npm run build
 
-      - name: Package Windows x64
-        run: npm run build:win
+      - name: Package Windows x64 (electron-builder)
+        run: npm run build:win:cross
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: koishi-desktop-pet-win32-x64
-          path: dist/古明地恋桌宠-win32-x64
+          path: dist/eb/win-unpacked
           if-no-files-found: error

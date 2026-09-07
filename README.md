@@ -73,15 +73,15 @@ npm start
 ### 🪟 Windows 版
 **方式一（推荐）**：每次推送 `main` 分支后，GitHub Actions 会自动构建 Windows x64 版——打开仓库 **Actions** 页签，进入最新一次 `Build Windows` 运行，在底部 Artifacts 下载 `koishi-desktop-pet-win32-x64`，解压后运行 `古明地恋桌宠.exe`（未签名，首次运行点「更多信息 → 仍要运行」）。
 
-**方式二（Windows 本机打包）**：
+**方式二（本机打包，macOS / Windows 通用）**：
 ```bash
 npm install
 npm run build
-npm run build:win
+npm run build:win:cross
 ```
-产物在 `dist/古明地恋桌宠-win32-x64/`。
+产物在 `dist/eb/win-unpacked/`（electron-builder，无需 wine）。
 
-**方式三（macOS 交叉打包）**：`npm run build:win:cross`（基于 electron-builder，无需 wine），产物在 `dist/eb/win-unpacked/`。
+**方式三（Windows 本机 electron-packager）**：`npm run build:win`，产物在 `dist/古明地恋桌宠-win32-x64/`。
 
 ### 重新打包（旧命令，仍可用）
 ```bash
