@@ -175,9 +175,11 @@ function toggleWalk(on) {
 function startWalk() {
   stopWalk();
   if (!win || win.isDestroyed()) return;
-  const wa = screen.getPrimaryDisplay().workArea;
   const b = win.getBounds();
-  /* 散步从当前位置开始：保持当前高度，只在屏幕左右往返 */
+  /* 用窗口当前所在的屏幕（支持副屏），而不是主屏幕 */
+  const disp = screen.getDisplayMatching(b);
+  const wa = disp.workArea;
+  /* 散步从当前位置开始：保持当前高度，只在所在屏幕左右往返 */
   const baseY = b.y;
   let x = Math.min(Math.max(b.x, wa.x), wa.x + wa.width - b.width);
   let dir = 1;
