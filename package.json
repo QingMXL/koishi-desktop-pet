@@ -1,0 +1,21 @@
+{
+  "name": "koishi-desktop-pet",
+  "productName": "古明地恋桌宠",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Touhou Koishi Komeiji desktop pet — transparent always-on-top 3D character (macOS, Electron + Three.js)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "esbuild renderer.js --bundle --format=iife --platform=browser --outfile=renderer.bundle.js --log-level=warning",
+    "rebuild": "npm run build && npm start"
+  },
+  "dependencies": {
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "electron": "^44.2.0",
+    "electron-packager": "^17.1.2",
+    "esbuild": "^0.28.2"
+  }
+}

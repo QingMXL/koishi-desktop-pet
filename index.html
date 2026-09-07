@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self' data:">
+<title>古明地恋桌宠</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: default;
+  }
+  canvas { display: block; }
+  #fx {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    font-family: "PingFang SC", "Hiragino Sans", sans-serif;
+  }
+  .mark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+    will-change: transform, opacity;
+  }
+  .bullet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-family: "PingFang SC", "Hiragino Sans", sans-serif;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.85), 0 0 3px rgba(255, 255, 255, 0.85);
+  }
+  .b-grain, .b-ball {
+    background: currentColor;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.85), 0 0 3px rgba(255, 255, 255, 0.85);
+  }
+  .b-grain { border-radius: 50%; }
+  .b-ball  { border-radius: 50%; }
+</style>
+<body>
+<canvas id="c"></canvas>
+<div id="fx"></div>
+<script src="./renderer.bundle.js"></script>
+</body>
+</html>
