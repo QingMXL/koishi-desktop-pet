@@ -33,7 +33,8 @@
     ],
     "win": {
       "target": "dir",
-      "icon": "icon.ico"
+      "icon": "icon.ico",
+      "signAndEditExecutable": false
     },
     "directories": {
       "output": "dist/eb"
