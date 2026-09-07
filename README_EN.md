@@ -48,7 +48,8 @@ A Touhou character living on your desktop — a transparent, always-on-top 3D do
 ### Autonomous behavior
 - **Blink**: blue-green eyes squeeze shut into a thin line at irregular intervals, occasional double-blinks
 - **Idle animations**: sway (default) / breathe / stand — switch from the menu bar icon
-- **Walk mode**: strolls along the bottom of the screen with little hops; stops when you drag or rotate her
+- **Walk mode**: starts from wherever she is, strolling left and right across the screen with little hops; stops when you drag or rotate her
+- **Spin in place**: rotates very slowly on the spot, blinking as usual and releasing a small ring of danmaku every few seconds; mutually exclusive with walk mode
 
 ### Other
 - Single instance: launching again only brings the pet to front — never a second one
