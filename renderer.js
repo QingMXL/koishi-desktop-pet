@@ -40,6 +40,8 @@ let modelSize = new THREE.Vector3(1, 1, 1);
 let camDist = 2;
 let idleMode = 0;
 let prevIdleMode = 0;
+let spinAngle = 0;      /* 原地转圈累计角度 */
+let nextSpinShot = 0;   /* 转圈时下一次小弹幕时间 */
 const DEFAULT_SCALE = 0.5;   /* 正常版 = 原来的最小版，整体缩小 */
 const MIN_SCALE = 0.35;
 const MAX_SCALE = 1.4;
@@ -331,6 +333,29 @@ function spawnBullets() {
   console.log('[bullets] fired', bullets.length);
 }
 
+/* 转圈时散发的一小圈低调弹幕：8 颗小弹、慢速、小半径 */
+function spawnMiniRing() {
+  const phase = Math.random() * Math.PI * 2;
+  const s = W / 480;
+  const type = Math.floor(Math.random() * BULLET_TYPES.length);
+  const color = BULLET_COLORS[Math.floor(Math.random() * BULLET_COLORS.length)];
+  for (let i = 0; i < 8; i++) {
+    const b = {
+      type, color,
+      born: performance.now() / 1000,
+      lifetime: 1.4,
+      angle: phase + (i * Math.PI * 2) / 8,
+      speed: 62 * s,
+      radius: 30 * s,
+      size: 8 * s,
+      spin: Math.random() * 6 - 3
+    };
+    bullets.push(b);
+    makeBulletEl(b);
+  }
+  console.log('[bullets] mini-ring', bullets.length);
+}
+
 function makeBulletEl(b) {
   const t = BULLET_TYPES[b.type];
   const el = document.createElement('div');
@@ -387,6 +412,15 @@ window.petAPI.onCommand((p) => {
     case 'walk-stop':
       idleMode = prevIdleMode;
       break;
+    case 'spin':
+      if (p.on) {
+        prevIdleMode = idleMode;
+        idleMode = 4;
+        nextSpinShot = 0;
+      } else {
+        idleMode = prevIdleMode;
+      }
+      break;
     case 'scale':
       if (p.dir === 0) scaleFactor = DEFAULT_SCALE;
       else scaleFactor = Math.min(MAX_SCALE, Math.max(MIN_SCALE, scaleFactor + (p.dir > 0 ? 0.15 : -0.15)));
@@ -440,6 +474,14 @@ function animate() {
   } else if (idleMode === 3) {  /* 散步 */
     rotZ = -0.05 + Math.sin(t * 7) * 0.008;
     bobY = Math.abs(Math.sin(t * 5.5)) * 0.02;
+  } else if (idleMode === 4) {  /* 原地转圈：非常缓慢地持续自转 */
+    spinAngle += dt * 0.14;
+    rotZ = Math.sin(t * 0.6) * 0.01;
+    bobY = Math.sin(t * 1.1) * 0.006;
+    if (t >= nextSpinShot) {
+      spawnMiniRing();
+      nextSpinShot = t + 2.2 + Math.random() * 1.8;
+    }
   }
 
   /* 眨眼：眼部网格 Y 轴压扁再弹开（快闭 → 微停顿 → 缓开） */
@@ -463,7 +505,7 @@ function animate() {
   /* 弹幕粒子逐帧更新（随角色中心与缩放实时跟随） */
   updateBullets();
 
-  root.rotation.y = userRotY + rotY;
+  root.rotation.y = userRotY + rotY + spinAngle;
   root.rotation.z = rotZ;
   root.rotation.x = userRotX;
   root.position.y = bobY;

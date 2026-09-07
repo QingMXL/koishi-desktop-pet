@@ -27,6 +27,7 @@ let win = null;
 let tray = null;
 let walking = false;
 let walkTimer = null;
+let spinning = false;
 let alwaysTop = true;
 let dragState = null;
 
@@ -130,6 +131,12 @@ function buildMenu() {
       click: (item) => toggleWalk(item.checked)
     },
     {
+      label: '原地转圈',
+      type: 'checkbox',
+      checked: spinning,
+      click: (item) => toggleSpin(item.checked)
+    },
+    {
       label: '始终置顶',
       type: 'checkbox',
       checked: alwaysTop,
@@ -158,6 +165,7 @@ function refreshTrayMenu() {
 /* ---------------- walk mode ---------------- */
 
 function toggleWalk(on) {
+  if (on && spinning) toggleSpin(false);   /* 散步与转圈互斥 */
   walking = on;
   if (walking) startWalk();
   else stopWalk();
@@ -169,10 +177,10 @@ function startWalk() {
   if (!win || win.isDestroyed()) return;
   const wa = screen.getPrimaryDisplay().workArea;
   const b = win.getBounds();
-  const baseY = wa.y + wa.height - b.height + 12;
+  /* 散步从当前位置开始：保持当前高度，只在屏幕左右往返 */
+  const baseY = b.y;
   let x = Math.min(Math.max(b.x, wa.x), wa.x + wa.width - b.width);
   let dir = 1;
-  win.setPosition(Math.round(x), Math.round(baseY));
   sendCmd({ cmd: 'walk-start' });
   walkTimer = setInterval(() => {
     if (!win || win.isDestroyed()) { stopWalk(); return; }
@@ -189,6 +197,13 @@ function startWalk() {
 function stopWalk() {
   if (walkTimer) { clearInterval(walkTimer); walkTimer = null; }
   sendCmd({ cmd: 'walk-stop' });
+}
+
+function toggleSpin(on) {
+  if (on && walking) toggleWalk(false);    /* 转圈与散步互斥 */
+  spinning = on;
+  sendCmd({ cmd: 'spin', on });
+  refreshTrayMenu();
 }
 
 /* ---------------- IPC ---------------- */
