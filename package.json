@@ -4,17 +4,47 @@
   "version": "1.0.0",
   "private": true,
   "description": "Touhou Koishi Komeiji desktop pet — transparent always-on-top 3D character (macOS, Electron + Three.js)",
+  "author": "QingMXL",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "build": "esbuild renderer.js --bundle --format=iife --platform=browser --outfile=renderer.bundle.js --log-level=warning",
-    "rebuild": "npm run build && npm start"
+    "rebuild": "npm run build && npm start",
+    "build:mac": "electron-packager . \"古明地恋桌宠\" --platform=darwin --arch=arm64 --icon=icon.icns --out=dist --overwrite --prune=true --ignore=\"^/(dist|node_modules/(electron|electron-packager|esbuild))\"",
+    "build:win": "electron-packager . \"古明地恋桌宠\" --platform=win32 --arch=x64 --icon=icon.ico --out=dist --overwrite --prune=true --ignore=\"^/(dist|node_modules/(electron|electron-packager|esbuild))\"",
+    "build:win:cross": "electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "com.qingmxl.koishi-pet",
+    "productName": "古明地恋桌宠",
+    "electronVersion": "44.2.0",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer.js",
+      "renderer.bundle.js",
+      "index.html",
+      "package.json",
+      "model/**",
+      "vendor/**",
+      "icon.ico",
+      "icon.icns",
+      "预览.png"
+    ],
+    "win": {
+      "target": "dir",
+      "icon": "icon.ico"
+    },
+    "directories": {
+      "output": "dist/eb"
+    }
   },
   "dependencies": {
     "three": "^0.185.1"
   },
   "devDependencies": {
     "electron": "^44.2.0",
+    "electron-builder": "^26.15.3",
     "electron-packager": "^17.1.2",
     "esbuild": "^0.28.2"
   }

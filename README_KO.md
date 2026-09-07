@@ -59,16 +59,31 @@
 
 ## 🚀 빠른 시작
 
-### 빌드 버전 직접 실행
-`dist/古明地恋桌宠-darwin-arm64/` 안의 App을 실행하거나, 바탕화면의 **古明地恋桌宠** 바로가기를 더블클릭하세요.
+**macOS(Apple Silicon)** 및 **Windows(x64)** 버전을 지원합니다.
 
-### 소스에서 실행
+### 🍎 macOS
+`dist/古明地恋桌宠-darwin-arm64/` 안의 App을 실행하거나, 바탕화면의 **古明地恋桌宠** 바로가기를 더블클릭하세요.
+소스에서 실행:
 ```bash
 npm install
 npm start
 ```
+다시 빌드: `npm run build && npm run build:mac`
 
-### 다시 빌드
+### 🪟 Windows
+**방법 1(권장)**: `main` 브랜치에 push할 때마다 GitHub Actions가 자동으로 Windows x64 버전을 빌드합니다. 저장소 **Actions** 탭에서 최신 `Build Windows` 실행을 열고, 하단 Artifacts에서 `koishi-desktop-pet-win32-x64`를 다운로드해 압축을 풀고 `古明地恋桌宠.exe`를 실행하세요(서명되지 않음 — 첫 실행 시 「추가 정보 → 그래도 실행」).
+
+**방법 2(Windows에서 빌드)**:
+```bash
+npm install
+npm run build
+npm run build:win
+```
+결과물은 `dist/古明地恋桌宠-win32-x64/`에 있습니다.
+
+**방법 3(macOS 교차 빌드)**: `npm run build:win:cross`(electron-builder, wine 불필요) → `dist/eb/win-unpacked/`.
+
+### 다시 빌드 (기존 명령, 여전히 사용 가능)
 ```bash
 npm run build   # renderer.js → renderer.bundle.js
 npx electron-packager . "古明地恋桌宠" \
@@ -77,7 +92,7 @@ npx electron-packager . "古明地恋桌宠" \
   --prune=true --ignore="^/(dist|node_modules/(electron|electron-packager|esbuild))"
 ```
 
-**요구 사항**: macOS 12+, Apple Silicon; 개발에는 Node.js 22+
+**요구 사항**: macOS 12+(Apple Silicon) 또는 Windows 10+(x64); 개발에는 Node.js 22+
 
 ---
 

@@ -309,7 +309,8 @@ app.whenReady().then(() => {
     }
     return net.fetch(pathToFileURL(filePath).toString()).catch(() => new Response('not found', { status: 404 }));
   });
-  app.setActivationPolicy('accessory');
+  /* macOS 专属：隐藏 Dock 图标；Windows 上无此 API，需跳过 */
+  if (process.platform === 'darwin') app.setActivationPolicy('accessory');
   createWindow();
   createTray();
 });

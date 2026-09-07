@@ -59,16 +59,31 @@
 
 ## 🚀 快速开始
 
-### 直接运行（打包版）
-运行 `dist/古明地恋桌宠-darwin-arm64/` 内的 App，或双击桌面上的 **古明地恋桌宠** 快捷方式。
+支持 **macOS（Apple Silicon）** 与 **Windows（x64）** 两个版本。
 
-### 源码运行
+### 🍎 macOS 版
+运行 `dist/古明地恋桌宠-darwin-arm64/` 内的 App，或双击桌面上的 **古明地恋桌宠** 快捷方式。
+源码运行：
 ```bash
 npm install
 npm start
 ```
+重新打包：`npm run build && npm run build:mac`
 
-### 重新打包
+### 🪟 Windows 版
+**方式一（推荐）**：每次推送 `main` 分支后，GitHub Actions 会自动构建 Windows x64 版——打开仓库 **Actions** 页签，进入最新一次 `Build Windows` 运行，在底部 Artifacts 下载 `koishi-desktop-pet-win32-x64`，解压后运行 `古明地恋桌宠.exe`（未签名，首次运行点「更多信息 → 仍要运行」）。
+
+**方式二（Windows 本机打包）**：
+```bash
+npm install
+npm run build
+npm run build:win
+```
+产物在 `dist/古明地恋桌宠-win32-x64/`。
+
+**方式三（macOS 交叉打包）**：`npm run build:win:cross`（基于 electron-builder，无需 wine），产物在 `dist/eb/win-unpacked/`。
+
+### 重新打包（旧命令，仍可用）
 ```bash
 npm run build   # renderer.js → renderer.bundle.js
 npx electron-packager . "古明地恋桌宠" \
@@ -77,7 +92,7 @@ npx electron-packager . "古明地恋桌宠" \
   --prune=true --ignore="^/(dist|node_modules/(electron|electron-packager|esbuild))"
 ```
 
-**要求**：macOS 12+、Apple Silicon；开发需要 Node.js 22+
+**要求**：macOS 12+、Apple Silicon 或 Windows 10+（x64）；开发需要 Node.js 22+
 
 ---
 

@@ -59,16 +59,31 @@
 
 ## 🚀 クイックスタート
 
-### ビルド版を実行
-`dist/古明地恋桌宠-darwin-arm64/` 内の App を起動するか、デスクトップの **古明地恋桌宠** ショートカットをダブルクリックしてください。
+**macOS（Apple Silicon）** と **Windows（x64）** の両方に対応しています。
 
-### ソースから実行
+### 🍎 macOS
+`dist/古明地恋桌宠-darwin-arm64/` 内の App を起動するか、デスクトップの **古明地恋桌宠** ショートカットをダブルクリックしてください。
+ソースから実行:
 ```bash
 npm install
 npm start
 ```
+再ビルド: `npm run build && npm run build:mac`
 
-### 再ビルド
+### 🪟 Windows
+**方法1(推奨)**: `main` ブランチへの push のたびに GitHub Actions が自動で Windows x64 版をビルドします。リポジトリの **Actions** タブで最新の `Build Windows` を開き、下部 Artifacts から `koishi-desktop-pet-win32-x64` をダウンロードして解凍し、`古明地恋桌宠.exe` を実行してください(未署名 — 初回は「詳細情報 → 実行」)。
+
+**方法2(Windows でビルド)**:
+```bash
+npm install
+npm run build
+npm run build:win
+```
+成果物は `dist/古明地恋桌宠-win32-x64/` にあります。
+
+**方法3(macOS でのクロスビルド)**: `npm run build:win:cross`(electron-builder、wine 不要) → `dist/eb/win-unpacked/`。
+
+### 再ビルド (旧コマンド、引き続き利用可)
 ```bash
 npm run build   # renderer.js → renderer.bundle.js
 npx electron-packager . "古明地恋桌宠" \
@@ -77,7 +92,7 @@ npx electron-packager . "古明地恋桌宠" \
   --prune=true --ignore="^/(dist|node_modules/(electron|electron-packager|esbuild))"
 ```
 
-**要件**: macOS 12+、Apple Silicon; 開発には Node.js 22+
+**要件**: macOS 12+(Apple Silicon) または Windows 10+(x64); 開発には Node.js 22+
 
 ---
 
