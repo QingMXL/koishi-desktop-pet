@@ -7,11 +7,13 @@
 A Touhou character living on your desktop — a transparent, always-on-top 3D doll that plays along with your mouse, blinks, strolls around, and fires danmaku.
 
 <p align="center">
-  <span style="background-color:#2da44e;color:#ffffff;padding:6px 16px;border-radius:20px;font-weight:600;">🇬🇧 English</span>
   <a href="README.md"><span style="background-color:#57606a;color:#ffffff;padding:6px 16px;border-radius:20px;font-weight:600;">🇨🇳 中文</span></a>
+  <span style="background-color:#2da44e;color:#ffffff;padding:6px 16px;border-radius:20px;font-weight:600;">🇬🇧 English</span>
+  <a href="README_KO.md"><span style="background-color:#57606a;color:#ffffff;padding:6px 16px;border-radius:20px;font-weight:600;">🇰🇷 한국어</span></a>
+  <a href="README_JA.md"><span style="background-color:#57606a;color:#ffffff;padding:6px 16px;border-radius:20px;font-weight:600;">🇯🇵 日本語</span></a>
 </p>
 
-![preview](预览.png)
+<p align="center"><img src="预览.png" width="55%" alt="preview"></p>
 
 </div>
 
@@ -90,7 +92,7 @@ koishi-desktop-pet/
 
 ---
 
-## 🙏 Credits
+## 💗 Credits
 
 Thanks to **ZUN (Jun'ya Ota)** for creating Touhou Project — and Koishi, the girl with the closed third eye who can't read minds yet understands people best.
 

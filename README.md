@@ -7,11 +7,13 @@
 一只住在你桌面上的东方角色 —— 透明置顶的 3D 娃娃，会用鼠标陪你玩，会眨眼、会散步、会放弹幕。
 
 <p align="center">
-  <a href="README_EN.md"><span style="background-color:#57606a;color:#ffffff;padding:6px 16px;border-radius:20px;font-weight:600;">🇬🇧 English</span></a>
   <span style="background-color:#2da44e;color:#ffffff;padding:6px 16px;border-radius:20px;font-weight:600;">🇨🇳 中文</span>
+  <a href="README_EN.md"><span style="background-color:#57606a;color:#ffffff;padding:6px 16px;border-radius:20px;font-weight:600;">🇬🇧 English</span></a>
+  <a href="README_KO.md"><span style="background-color:#57606a;color:#ffffff;padding:6px 16px;border-radius:20px;font-weight:600;">🇰🇷 한국어</span></a>
+  <a href="README_JA.md"><span style="background-color:#57606a;color:#ffffff;padding:6px 16px;border-radius:20px;font-weight:600;">🇯🇵 日本語</span></a>
 </p>
 
-![preview](预览.png)
+<p align="center"><img src="预览.png" width="55%" alt="preview"></p>
 
 </div>
 
@@ -90,7 +92,7 @@ koishi-desktop-pet/
 
 ---
 
-## 🙏 致谢
+## 💗 致谢
 
 感谢 **ZUN（太田顺也）** 创造了东方 Project，以及这个闭着第三眼、读不了心却最懂人心的古明地恋。
 
