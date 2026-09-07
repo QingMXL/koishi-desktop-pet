@@ -100,8 +100,10 @@ koishi-desktop-pet/
 
 Thanks to **ZUN (Jun'ya Ota)** for creating Touhou Project — and Koishi, the girl with the closed third eye who can't read minds yet understands people best.
 
+And thanks to the **Touhou fandom** itself — a truly great and wonderful community. Kind, attentive, and deeply caring, you keep weaving Gensokyo bigger with fan works and love. Being part of this circle is part of why this pet exists.
+
 Danmaku aesthetics are inspired by Touhou Project itself — and this Koishi hails from her home stage, *Touhou Chireiden ~ Subterranean Animism*.
 
-**Looking forward to *Touhou Koumakyou: New Classic ~ the Embodiment of Scarlet Devil.*!** 24 years later, ZUN personally remasters the Scarlet Devil's stage — releasing **September 10, 2026**. The danmaku is coming back.
+**Looking forward to *Touhou Koumakyou: New Classic ~ the Embodiment of Scarlet Devil.*!** 24 years later, ZUN personally remasters Touhou Koumakyou — releasing **September 10, 2026**. The danmaku is coming back.
 
 > Fan-made, unofficial project. The 3D model was provided by the user (Blender export). Touhou Project and its characters are © ZUN / Team Shanghai Alice.
