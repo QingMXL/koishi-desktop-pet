@@ -13,7 +13,11 @@ A Touhou character living on your desktop — a transparent, always-on-top 3D do
   <a href="README_JA.md"><span style="background-color:#57606a;color:#ffffff;padding:6px 16px;border-radius:20px;font-weight:600;">🇯🇵 日本語</span></a>
 </p>
 
-<p align="center"><img src="预览.png" width="55%" alt="preview"></p>
+<p align="center"><img src="预览.png" width="50%" alt="preview"></p>
+
+<p align="center"><b>About her</b></p>
+
+<p align="center" style="max-width:640px;margin:0 auto;">Koishi Komeiji is a satori youkai from Touhou Project — the younger sister of Satori Komeiji. She closed her mind-reading third eye on purpose, freeing herself from others' thoughts and becoming an "unconscious" being who follows only her own whims: her expressions are elusive, her behavior unpredictable. In this project she moves into your desktop: she breathes, blinks, strolls around, fires danmaku when you click her, and can be rotated and scaled however you like.</p>
 
 </div>
 

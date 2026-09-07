@@ -13,7 +13,11 @@
   <a href="README_JA.md"><span style="background-color:#57606a;color:#ffffff;padding:6px 16px;border-radius:20px;font-weight:600;">🇯🇵 日本語</span></a>
 </p>
 
-<p align="center"><img src="预览.png" width="55%" alt="preview"></p>
+<p align="center"><img src="预览.png" width="50%" alt="preview"></p>
+
+<p align="center"><b>그녀에 대하여</b></p>
+
+<p align="center" style="max-width:640px;margin:0 auto;">코이시 코메이지는 동방 프로젝트의 사토리 요괴로, 코메이지 사토리의 여동생입니다. 마음을 읽는 제3의 눈을 스스로 닫아 다른 사람의 생각에서 벗어난, '무의식'의 자유로운 존재가 되었죠 — 표정은 종잡을 수 없고 행동은 예측할 수 없습니다. 이 프로젝트에서 그녀는 당신의 바탕화면에 살게 됩니다: 숨 쉬고, 눈을 깜빡이고, 이리저리 산책하고, 클릭하면 기분 좋게 탄막을 쏘고, 회전과 확대·축소도 자유자재입니다.</p>
 
 </div>
 

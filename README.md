@@ -13,7 +13,11 @@
   <a href="README_JA.md"><span style="background-color:#57606a;color:#ffffff;padding:6px 16px;border-radius:20px;font-weight:600;">🇯🇵 日本語</span></a>
 </p>
 
-<p align="center"><img src="预览.png" width="55%" alt="preview"></p>
+<p align="center"><img src="预览.png" width="50%" alt="preview"></p>
+
+<p align="center"><b>关于她</b></p>
+
+<p align="center" style="max-width:640px;margin:0 auto;">古明地恋是《东方Project》中的觉妖怪，古明地觉的妹妹。她主动闭上了能读取人心的第三只眼，不再受他人想法的束缚，成为「无意识」的、随心所欲的自由存在——表情捉摸不定，行为难以预测。在这个项目里，她住进了你的桌面：会呼吸、会眨眼、会四处散步，点击她时会开心地放出弹幕，还可以旋转朝向、缩放大小，任你摆弄。</p>
 
 </div>
 

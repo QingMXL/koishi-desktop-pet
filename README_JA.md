@@ -13,7 +13,11 @@
   <span style="background-color:#2da44e;color:#ffffff;padding:6px 16px;border-radius:20px;font-weight:600;">🇯🇵 日本語</span>
 </p>
 
-<p align="center"><img src="预览.png" width="55%" alt="preview"></p>
+<p align="center"><img src="预览.png" width="50%" alt="preview"></p>
+
+<p align="center"><b>彼女について</b></p>
+
+<p align="center" style="max-width:640px;margin:0 auto;">古明地こいしは東方Projectのさとり妖怪で、古明地さとりの妹。人の心を読む第三の目を自ら閉じ、他人の思考から解放された「無意識」の自由な存在になりました——表情は掴みどころがなく、行動は予測不能です。このプロジェクトでは、彼女があなたのデスクトップに棲みつきます: 呼吸し、瞬きし、あちこち散歩し、クリックすると嬉しそうに弾幕を放ち、回転や拡大・縮小も思いのままです。</p>
 
 </div>
 
